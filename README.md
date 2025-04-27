@@ -14,7 +14,7 @@ This repository contains all the Python assignments, projects, and practice exer
 
 ## 🛠 Tools Used
 
-- Python 3.x
+- Python 3.11
 - VS Code / Jupyter Notebook
 - Git & GitHub
 
