@@ -57,9 +57,15 @@ class SocialMediaPlatform:
         self.load_users()
 
     def load_users(self):
-        if os.path.exists("users.txt"):
-            with open("users.txt", "r") as f:
-                for line in f:
+        if not os.path.exists("users.txt"):
+            # File doesn't exist; create it
+            with open("users.txt", "w") as f:
+                pass  # Just create an empty file
+            print("Created new 'users.txt' file.")
+
+        with open("users.txt", "r") as f:
+            for line in f:
+                if line.strip():  # Skip empty lines
                     username, password = line.strip().split(",", 1)
                     self.users[username] = User(username, password)
 
